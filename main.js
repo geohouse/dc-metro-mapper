@@ -1,12 +1,23 @@
+/*
+Line colors used in Mapbox (same as on Metro map)
+Red: hsl(359, 95%, 58%)
+Yellow: hsl(45, 100%, 61%)
+Green: hsl(144, 83%, 37%)
+Orange: hsl(29, 100%, 58%)
+Silver: hsl(162, 7%, 63%)
+Blue: hsl(203, 100%, 38%)
+
+*/
+
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiZ2VvaG91c2UiLCJhIjoiY2w3bXE2NGM0MGE0eTNxcGJ5Z3JkejB6dyJ9.kiYEnwXtZejWr5rCvexouQ";
+  "pk.eyJ1IjoiZ2VvaG91c2UiLCJhIjoiY2wxMTlrNDh6MThmbzNxbzBoMjhtNjlubCJ9.EMR9N5vvQAEuDHRa38ADvQ";
 
 const map = new mapboxgl.Map({
-  style: "mapbox://styles/mapbox/light-v11",
-  center: [-74, 40],
-  zoom: 15.5,
-  pitch: 45,
-  bearing: -17.6,
+  style: "mapbox://styles/geohouse/clb8cf3on000615p5v6mxm48w",
+  center: [-77.03101, 38.88697],
+  zoom: 14,
+  pitch: 20,
+  bearing: 0,
   container: "map",
   antialias: true,
 });

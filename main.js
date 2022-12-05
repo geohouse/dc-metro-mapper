@@ -66,6 +66,18 @@ map.on("load", () => {
 map.on("click", "dc-museums", (event) => {
   const lngLat = event.lngLat;
   console.log(lngLat);
+
+  const metroStations = map.queryRenderedFeatures({
+    layers: ["metro-stations"],
+  });
+  const metroStations_turf = turf.featureCollection(metroStations);
+  const nearestMetroStation = turf.nearestPoint(
+    [lngLat.lng, lngLat.lat],
+    metroStations_turf
+  );
+  console.log(metroStations);
+  console.log(metroStations_turf);
+  console.log(nearestMetroStation);
 });
 
 map.on("mouseenter", "dc-museums", () => {

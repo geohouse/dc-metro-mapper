@@ -62,3 +62,16 @@ map.on("load", () => {
     labelLayerId
   );
 });
+
+map.on("click", "dc-museums", (event) => {
+  const lngLat = event.lngLat;
+  console.log(lngLat);
+});
+
+map.on("mouseenter", "dc-museums", () => {
+  map.getCanvas().style.cursor = "default";
+});
+
+map.on("mouseleave", "dc-museums", () => {
+  map.getCanvas().style.cursor = "pointer";
+});

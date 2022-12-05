@@ -1,4 +1,5 @@
-/* Use different box sizing model */
+/* Use different box sizing model so that padding and borders are included
+when calculating the final size of the box*/
 *,
 *::before,
 *::after {

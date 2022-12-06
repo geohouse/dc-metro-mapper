@@ -66,7 +66,9 @@ map.on("load", () => {
 map.on("click", "dc-museums", (event) => {
   const lngLat = event.lngLat;
   console.log(lngLat);
-
+  const museumPoint = map.queryRenderedFeatures(event.point);
+  console.log(museumPoint);
+  const museumLabel = museumPoint[0].properties.LABEL;
   const metroStations = map.queryRenderedFeatures({
     layers: ["metro-stations"],
   });
@@ -75,6 +77,8 @@ map.on("click", "dc-museums", (event) => {
     [lngLat.lng, lngLat.lat],
     metroStations_turf
   );
+  console.log(event);
+  console.log(museumLabel);
   console.log(metroStations);
   console.log(metroStations_turf);
   console.log(nearestMetroStation);

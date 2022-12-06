@@ -13,13 +13,17 @@ when calculating the final size of the box*/
 
 /* Allows % based heights in the app */
 html,
-body {
+body,
+#map-holder {
   height: 100%;
 }
 
+#map-holder {
+  display: flex;
+  flex-direction: row;
+}
+
 #map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
+  height: 100%;
+  width: 80%;
 }

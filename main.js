@@ -63,6 +63,8 @@ map.on("load", () => {
   );
 });
 
+const metroDetailsDiv = document.querySelector("#metro-details");
+
 map.on("click", "dc-museums", (event) => {
   const lngLat = event.lngLat;
   console.log(lngLat);
@@ -82,6 +84,11 @@ map.on("click", "dc-museums", (event) => {
   console.log(metroStations);
   console.log(metroStations_turf);
   console.log(nearestMetroStation);
+  metroDetailsDiv.innerHTML = `<p>${museumLabel}</p>`;
+  metroDetailsDiv.innerHTML += `<p>The nearest Metro stop is:</p>`;
+  metroDetailsDiv.innerHTML += `<p>${nearestMetroStation.properties.NAME}</p>`;
+  metroDetailsDiv.innerHTML += `<p>Serving the following Metro line(s):</p>`;
+  metroDetailsDiv.innerHTML += `<p>${nearestMetroStation.properties.LINE}</p>`;
 });
 
 map.on("mouseenter", "dc-museums", () => {

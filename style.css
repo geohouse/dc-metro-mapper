@@ -13,17 +13,27 @@ when calculating the final size of the box*/
 
 /* Allows % based heights in the app */
 html,
-body,
-#map-holder {
+body {
   height: 100%;
-}
-
-#map-holder {
-  display: flex;
-  flex-direction: row;
 }
 
 #map {
-  height: 100%;
-  width: 80%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#metro-details {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background-color: hsla(0deg, 0%, 95%, 0.85);
+  height: 70%;
+  width: 15%;
+  line-height: 1.5rem;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid hsla(0deg, 0%, 70%, 0.85);
 }

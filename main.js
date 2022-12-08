@@ -84,9 +84,9 @@ map.on("click", "dc-museums", (event) => {
   console.log(metroStations);
   console.log(metroStations_turf);
   console.log(nearestMetroStation);
-  metroDetailsDiv.innerHTML = `<p>${museumLabel}</p>`;
+  metroDetailsDiv.innerHTML = `<p><strong>${museumLabel}</strong></p><br></br>`;
   metroDetailsDiv.innerHTML += `<p>The nearest Metro stop is:</p>`;
-  metroDetailsDiv.innerHTML += `<p>${nearestMetroStation.properties.NAME}</p>`;
+  metroDetailsDiv.innerHTML += `<p>${nearestMetroStation.properties.NAME}</p><br></br>`;
   metroDetailsDiv.innerHTML += `<p>Serving the following Metro line(s):</p>`;
   metroDetailsDiv.innerHTML += `<p>${nearestMetroStation.properties.LINE}</p>`;
 });

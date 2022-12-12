@@ -1,3 +1,13 @@
+/* These are the Metro line colors */
+:root {
+  --blue-line: hsl(203, 100%, 38%);
+  --red-line: hsl(359, 95%, 58%);
+  --yellow-line: hsl(45, 100%, 61%);
+  --green-line: hsl(144, 83%, 37%);
+  --orange-line: hsl(29, 100%, 58%);
+  --silver-line: hsl(162, 7%, 63%);
+}
+
 /* Use different box sizing model so that padding and borders are included
 when calculating the final size of the box*/
 *,
@@ -30,10 +40,52 @@ body {
   top: 20px;
   right: 10px;
   background-color: hsla(0deg, 0%, 95%, 0.85);
-  height: 70%;
+  height: 90%;
   width: 15%;
   line-height: 1.5rem;
   padding: 10px;
   border-radius: 20px;
   border: 1px solid hsla(0deg, 0%, 70%, 0.85);
+}
+
+.metro-line {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin: 5px;
+}
+
+.metro-line-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.metro-line-color {
+  width: 2rem;
+  height: 2rem;
+}
+
+.metro-line-color.blue {
+  background-color: var(--blue-line);
+}
+
+.metro-line-color.orange {
+  background-color: var(--orange-line);
+}
+
+.metro-line-color.yellow {
+  background-color: var(--yellow-line);
+}
+
+.metro-line-color.green {
+  background-color: var(--green-line);
+}
+
+.metro-line-color.red {
+  background-color: var(--red-line);
+}
+
+.metro-line-color.silver {
+  background-color: var(--silver-line);
 }

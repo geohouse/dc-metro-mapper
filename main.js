@@ -84,11 +84,28 @@ map.on("click", "dc-museums", (event) => {
   console.log(metroStations);
   console.log(metroStations_turf);
   console.log(nearestMetroStation);
+  const infoLinks = {
+    "U.S. Capitol Visitor Center": "https://www.visitthecapitol.gov",
+  };
+  // string representation of 1 or more closest
+  // lines separated by commas parsed to array (safe if only 1
+  // line is listed and no ',' is present)
+  let closestLines = nearestMetroStation.properties.LINE.split(",");
+
   metroDetailsDiv.innerHTML = `<p><strong>${museumLabel}</strong></p><br></br>`;
+  if (keys(infoLinks).includes(museumLabel)) {
+    metroDetailsDiv.innerHTML += `<a href=${infoLinks.museumLabel}>Museum website</a>`;
+  }
   metroDetailsDiv.innerHTML += `<p>The nearest Metro stop is:</p>`;
   metroDetailsDiv.innerHTML += `<p>${nearestMetroStation.properties.NAME}</p><br></br>`;
   metroDetailsDiv.innerHTML += `<p>Serving the following Metro line(s):</p>`;
-  metroDetailsDiv.innerHTML += `<p>${nearestMetroStation.properties.LINE}</p>`;
+  for (let line of closestLines) {
+    metroDetailsDiv.innerHTML += `<div class="metro-line">
+    <div class= "metro-line-color ${line.toLowerCase()}"></div>
+    <p class="metro-line-name">${line}</p>
+    </div>`;
+  }
+  //metroDetailsDiv.innerHTML += `<p>${nearestMetroStation.properties.LINE}</p>`;
 });
 
 map.on("mouseenter", "dc-museums", () => {

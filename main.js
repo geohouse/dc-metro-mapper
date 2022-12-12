@@ -65,6 +65,23 @@ map.on("load", () => {
 
 const metroDetailsDiv = document.querySelector("#metro-details");
 
+// These are the links to the different museums.
+// The keys are the museum names as present in the data layer
+const infoLinks = {
+  "U.S. Capitol Visitor Center": "https://www.visitthecapitol.gov",
+  "United States Botanic Garden": "https://www.usbg.gov/",
+  "National Museum of American History": "https://americanhistory.si.edu/",
+  "National Museum of the American Indian": "https://americanindian.si.edu/",
+  "National Air and Space Museum": "https://airandspace.si.edu/",
+  "National Museum of African American History and Culture":
+    "https://nmaahc.si.edu/",
+  "National Museum of Natural History": "https://naturalhistory.si.edu/",
+  "National Gallery of Art Sculpture Garden": "https://www.nga.gov/",
+  "National Gallery of Art - West Building": "https://www.nga.gov/",
+  "National Gallery of Art - East Building": "https://www.nga.gov/",
+  "National Portrait Gallery": "https://www.npg.si.edu/",
+};
+
 map.on("click", "dc-museums", (event) => {
   const lngLat = event.lngLat;
   console.log(lngLat);
@@ -84,20 +101,17 @@ map.on("click", "dc-museums", (event) => {
   console.log(metroStations);
   console.log(metroStations_turf);
   console.log(nearestMetroStation);
-  const infoLinks = {
-    "U.S. Capitol Visitor Center": "https://www.visitthecapitol.gov",
-  };
+
   // string representation of 1 or more closest
   // lines separated by commas parsed to array (safe if only 1
   // line is listed and no ',' is present)
   let closestLines = nearestMetroStation.properties.LINE.split(",");
 
-  metroDetailsDiv.innerHTML = `<p><strong>${museumLabel}</strong></p><br></br>`;
-  if (keys(infoLinks).includes(museumLabel)) {
-    metroDetailsDiv.innerHTML += `<a href=${infoLinks.museumLabel}>Museum website</a>`;
+  metroDetailsDiv.innerHTML = `<p><strong>${museumLabel}</strong></p>`;
+  if (Object.keys(infoLinks).includes(museumLabel)) {
+    metroDetailsDiv.innerHTML += `<a href=${infoLinks[museumLabel]}>Museum website</a>`;
   }
-  metroDetailsDiv.innerHTML += `<p>The nearest Metro stop is:</p>`;
-  metroDetailsDiv.innerHTML += `<p>${nearestMetroStation.properties.NAME}</p><br></br>`;
+  metroDetailsDiv.innerHTML += `<p>The nearest Metro stop is: <em>${nearestMetroStation.properties.NAME}</em></p>`;
   metroDetailsDiv.innerHTML += `<p>Serving the following Metro line(s):</p>`;
   for (let line of closestLines) {
     metroDetailsDiv.innerHTML += `<div class="metro-line">

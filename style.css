@@ -48,6 +48,11 @@ body {
   border: 1px solid hsla(0deg, 0%, 70%, 0.85);
 }
 
+#metro-details > p:not(:first-of-type),
+#metro-details > a {
+  padding-top: 20px;
+}
+
 .metro-line {
   display: flex;
   flex-direction: row;

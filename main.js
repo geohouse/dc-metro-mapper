@@ -80,6 +80,22 @@ const infoLinks = {
   "National Gallery of Art - West Building": "https://www.nga.gov/",
   "National Gallery of Art - East Building": "https://www.nga.gov/",
   "National Portrait Gallery": "https://www.npg.si.edu/",
+  "National Museum of Women in the Arts": "https://nmwa.org/",
+  "Corcoran Gallery of Art": "https://corcoran.org",
+  "United States Holocaust Memorial Museum": "https://www.ushmm.org/",
+  "Smithsonian Castle":
+    "https://www.si.edu/museums/smithsonian-institution-building",
+  "National Museum of African Art": "https://africa.si.edu/",
+  "Freer Gallery of Art": "https://www.si.edu/museums/freer-gallery",
+  "National Postal Museum": "https://postalmuseum.si.edu/",
+  "National Zoo": "https://nationalzoo.si.edu/",
+  "Howard University Gallery of Art": "https://art.howard.edu/gallery-art",
+  "African American Civil War Memorial Museum":
+    "https://www.afroamcivilwar.org/",
+  "Frederick Douglass National Historic Site":
+    "https://www.nps.gov/frdo/index.htm",
+  "Renwick Gallery": "https://americanart.si.edu/visit/renwick",
+  "The Textile Museum": "https://museum.gwu.edu/",
 };
 
 map.on("click", "dc-museums", (event) => {

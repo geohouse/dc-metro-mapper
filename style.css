@@ -34,12 +34,33 @@ body {
   width: 100%;
 }
 
+@media (max-width: 600px) {
+  #metro-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: fixed;
+    top: 10px;
+    left: 2%;
+    background-color: hsla(240deg, 20%, 90%, 0.85);
+    height: 10%;
+    width: 96%;
+    line-height: 1.5rem;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid hsla(0deg, 0%, 70%, 0.85);
+  }
+}
+
 #metro-details {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 10px;
-  background-color: hsla(0deg, 0%, 95%, 0.85);
+  background-color: hsla(240deg, 20%, 90%, 0.85);
   height: 90%;
   width: 15%;
   line-height: 1.5rem;
